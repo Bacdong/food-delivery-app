@@ -1,51 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/shared/widgets/my_text_field.dart';
+import 'package:food_delivery/shared/widgets/primary_button.dart';
 
 class Register extends StatelessWidget {
   const Register({ Key? key }) : super(key: key);
-
-  Widget txtField({ required String hintText, required IconData icon }) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: TextFormField(
-        decoration: InputDecoration(
-          prefixIcon: Icon(icon, color: Colors.white,),
-          hintText: hintText,
-          hintStyle: TextStyle(color: Colors.white),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey)
-          )
-        ),
-      ),
-    );
-  }
-
-  Widget primaryBtn({ 
-    required String name, 
-    required Color color, 
-    required Color txtColor 
-  }) {
-    return Container(
-      width: 350,
-      height: 60,
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: RaisedButton(
-        color: color,
-        child: Text(
-          name,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: txtColor,
-            letterSpacing: 1
-          ),
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30)
-        ),
-        onPressed: () {},
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +33,9 @@ class Register extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  txtField(hintText: 'Username', icon: Icons.person_outline),
-                  txtField(hintText: 'Password', icon: Icons.lock_outline),
-                  txtField(hintText: 'Confirm Password', icon: Icons.person_outline),
+                  MyTextField(hintText: 'Username', icon: Icons.person_outline),
+                  MyTextField(hintText: 'Password', icon: Icons.lock_outline),
+                  MyTextField(hintText: 'Confirm Password', icon: Icons.person_outline),
                 ],
               ),
             ),
@@ -85,16 +43,8 @@ class Register extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  primaryBtn(
-                    name: 'Cancel', 
-                    color: Colors.red, 
-                    txtColor: Colors.white
-                  ),
-                  primaryBtn(
-                    name: 'Sign up', 
-                    color: Colors.green, 
-                    txtColor: Colors.white
-                  ),
+                  PrimaryButton(name: 'Cancel', color: Colors.red),
+                  PrimaryButton(name: 'Sign up', color: Colors.green),
                 ],
               ),
             ),

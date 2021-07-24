@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/shared/widgets/my_text_field.dart';
+import 'package:food_delivery/shared/widgets/primary_button.dart';
 
 class Login extends StatelessWidget {
   const Login({ Key? key }) : super(key: key);
-
-  Widget txtField({ required String hintText, required IconData icon, required Color iconColor }) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: TextFormField(
-        decoration: InputDecoration(
-          prefixIcon: Icon(icon, color: iconColor,),
-          hintText: hintText,
-          hintStyle: TextStyle(color: Colors.white),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey)
-          )
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,39 +33,17 @@ class Login extends StatelessWidget {
             ),
             Column(
               children: [
-                txtField(
+                MyTextField(
                   icon: Icons.person_outline,
-                  iconColor: Colors.white,
                   hintText: 'Username',
                 ),
-                txtField(
+                MyTextField(
                   icon: Icons.lock_outline,
-                  iconColor: Colors.white,
                   hintText: 'Password',
                 ),
               ],
             ),
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              width: 350,
-              height: 60,
-              child: RaisedButton(
-                child: Text(
-                  'Sign in',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 1,
-                  ),
-                ),
-                color: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)
-                ),
-                onPressed: () {},
-              ),
-            ),
+            PrimaryButton(name: 'Sign in', color: Colors.green),
             Container(
               margin: EdgeInsets.only(top: 30),
               child: Row(

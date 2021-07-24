@@ -37,7 +37,7 @@ class Login extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'Sign in',
+              'Sign In',
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,

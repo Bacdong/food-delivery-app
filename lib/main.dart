@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/login.dart';
+import 'package:food_delivery/screens/register.dart';
 import 'package:food_delivery/screens/welcome.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: Welcome(),
+      home: Register(),
     );
   }
 }

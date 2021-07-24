@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/shared/widgets/my_text_field.dart';
 import 'package:food_delivery/shared/widgets/primary_button.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   const Register({ Key? key }) : super(key: key);
 
+  @override
+  _RegisterState createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +38,9 @@ class Register extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  MyTextField(hintText: 'Username', icon: Icons.person_outline),
-                  MyTextField(hintText: 'Password', icon: Icons.lock_outline),
-                  MyTextField(hintText: 'Confirm Password', icon: Icons.person_outline),
+                  MyTextField(txtColor: Colors.white, obscureText: false, hintText: 'Username', icon: Icons.person_outline),
+                  MyTextField(txtColor: Colors.white, obscureText: true, hintText: 'Password', icon: Icons.lock_outline),
+                  MyTextField(txtColor: Colors.white, obscureText: true, hintText: 'Confirm Password', icon: Icons.lock_outline),
                 ],
               ),
             ),

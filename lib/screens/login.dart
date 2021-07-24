@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/shared/widgets/my_text_field.dart';
 import 'package:food_delivery/shared/widgets/primary_button.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({ Key? key }) : super(key: key);
 
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +39,15 @@ class Login extends StatelessWidget {
             Column(
               children: [
                 MyTextField(
+                  obscureText: false,
                   icon: Icons.person_outline,
+                  txtColor: Colors.white,
                   hintText: 'Username',
                 ),
                 MyTextField(
+                  obscureText: true,
                   icon: Icons.lock_outline,
+                  txtColor: Colors.white,
                   hintText: 'Password',
                 ),
               ],

@@ -43,8 +43,8 @@ class Register extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  PrimaryButton(name: 'Cancel', color: Colors.red),
                   PrimaryButton(name: 'Sign up', color: Colors.green),
+                  PrimaryButton(name: 'Cancel', color: Colors.red),
                 ],
               ),
             ),

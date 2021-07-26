@@ -39,6 +39,7 @@ class Welcome extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
               child: Center(
                 child: Image.asset('images/logo.jpeg'),
               ),

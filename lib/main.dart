@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/food_detail.dart';
 import 'package:food_delivery/screens/home.dart';
 import 'package:food_delivery/screens/login.dart';
 import 'package:food_delivery/screens/register.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
           color: Color(0xff2b2b2b),
         ),
       ),
-      home: Home(),
+      home: FoodDetail(),
     );
   }
 }

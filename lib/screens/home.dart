@@ -208,6 +208,10 @@ class _HomeState extends State<Home> {
           children: [
             TextField(
               decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
                 hintText: 'Search Food',
                 hintStyle: TextStyle(
                   fontSize: 18, 

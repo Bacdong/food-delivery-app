@@ -9,6 +9,7 @@ class FoodDetail extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         leading: IconButton(
+          splashRadius: 25,
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {}, 
         ),
@@ -74,11 +75,15 @@ class FoodDetail extends StatelessWidget {
                                 Container(
                                   width: 45,
                                   height: 45,
-                                  decoration: BoxDecoration(
+                                  child: RaisedButton(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    padding: EdgeInsets.zero,
+                                    child: Icon(Icons.remove, color: Colors.black,),
+                                    onPressed: () {},
                                   ),
-                                  child: Icon(Icons.remove),
                                 ),
                                 SizedBox(width: 15,),
                                 Text(
@@ -93,11 +98,15 @@ class FoodDetail extends StatelessWidget {
                                 Container(
                                   width: 45,
                                   height: 45,
-                                  decoration: BoxDecoration(
+                                  child: RaisedButton(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    padding: EdgeInsets.zero,
+                                    child: Icon(Icons.add, color: Colors.black,),
+                                    onPressed: () {},
                                   ),
-                                  child: Icon(Icons.add),
                                 ),
                               ],
                             ),
@@ -144,7 +153,7 @@ class FoodDetail extends StatelessWidget {
                     height: 60,
                     width: double.infinity,
                     child: RaisedButton(
-                      color: Color(0xff2b2b2b),
+                      color: Colors.green,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),

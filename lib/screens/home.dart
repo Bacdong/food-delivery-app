@@ -255,17 +255,17 @@ class _HomeState extends State<Home> {
                   ),
                   FoodItems(
                     image: 'images/foods/2.png', 
-                    name: 'Neapolian',
+                    name: 'Chicago',
                     price: 15.2,
                   ),
                   FoodItems(
                     image: 'images/foods/3.png', 
-                    name: 'Neapolian',
+                    name: 'Greek',
                     price: 19.05,
                   ),
                   FoodItems(
                     image: 'images/foods/4.png', 
-                    name: 'Neapolian',
+                    name: 'Detroit',
                     price: 27.2,
                   ),
                   FoodItems(

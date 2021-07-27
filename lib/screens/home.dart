@@ -90,12 +90,109 @@ class _HomeState extends State<Home> {
     );
   }
 
+  Widget DrawerItems({ 
+    required IconData icon, 
+    required String title,
+    required Color color,
+  }) {
+    return ListTile(
+      leading: Icon(icon, color: color,),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: color,
+          letterSpacing: 1,
+        ),
+      ),
+    );
+  }
+
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        child: Container(
+          color: Color(0xff3a3e3e),
+          child: SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/backgrounds/1.jpeg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Color(0xff3a3e3e),
+                    backgroundImage: AssetImage('images/thumbnails/1.jpeg'),
+                  ), 
+                  currentAccountPictureSize: Size(75, 75), 
+                  accountName: Text('Bac Dong', style: TextStyle(fontSize: 18, letterSpacing: 1),), 
+                  accountEmail: Text('duongdong2203@gmail.com', style: TextStyle(fontSize: 14, letterSpacing: 1),),
+                ),
+                DrawerItems(
+                  icon: Icons.person, 
+                  title: 'Profile', 
+                  color: Colors.white
+                ),
+                DrawerItems(
+                  icon: Icons.shopping_bag, 
+                  title: 'Cart', 
+                  color: Colors.white
+                ),
+                DrawerItems(
+                  icon: Icons.business_center, 
+                  title: 'Order ', 
+                  color: Colors.white
+                ),
+                DrawerItems(
+                  icon: Icons.error, 
+                  title: 'About ', 
+                  color: Colors.white
+                ),
+                Divider(color: Colors.grey),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Communicate',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+                
+                DrawerItems(
+                  icon: Icons.lock, 
+                  title: 'Change', 
+                  color: Colors.white
+                ),
+                DrawerItems(
+                  icon: Icons.logout, 
+                  title: 'Sign Out', 
+                  color: Colors.white
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       appBar: AppBar(
         elevation: 0.0,
-        leading: Icon(Icons.sort),
+        leading: IconButton(
+          icon: Icon(Icons.sort),
+          onPressed: () => _scaffoldKey.currentState?.openDrawer(), 
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),

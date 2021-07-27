@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/home.dart';
 import 'package:food_delivery/screens/login.dart';
 import 'package:food_delivery/screens/register.dart';
 import 'package:food_delivery/screens/welcome.dart';
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Food Delivery',
       theme: ThemeData(
-
+        scaffoldBackgroundColor: Color(0xff2b2b2b),
+        appBarTheme: AppBarTheme(
+          color: Color(0xff2b2b2b),
+        ),
       ),
-      home: Register(),
+      home: Home(),
     );
   }
 }

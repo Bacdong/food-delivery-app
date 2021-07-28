@@ -13,6 +13,16 @@ class FoodDetail extends StatelessWidget {
           icon: Icon(Icons.arrow_back_ios),
           onPressed: () {}, 
         ),
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: IconButton(
+              icon: Icon(Icons.shopping_bag),
+              onPressed: () {},
+              splashRadius: 25,
+            ),
+          ),
+        ],
       ),
       body: Column(
         children: [
